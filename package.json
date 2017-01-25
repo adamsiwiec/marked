@@ -1,0 +1,37 @@
+{
+  "name": "marked",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
+  "author": "Adam Siwiec <brickmaster01@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "start": "concurrently 'npm run build' 'nodemon ./bin/www' "
+  },
+  "dependencies": {
+    "concurrently": "^3.1.0",
+    "markdown": "^0.5.0",
+    "to-markdown": "^3.0.3",
+    "vue": "^2.1.0",
+    "vue-resource": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "vue-loader": "^10.0.0",
+    "vue-template-compiler": "^2.1.0",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.9",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  }
+}
