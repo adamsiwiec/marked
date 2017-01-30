@@ -13,7 +13,12 @@ router.get('/:name', (req, res) => {
 
 router.get('/:name/data', (req, res) => {
     fs.readFile(path.join(__dirname, `/../data/${req.params.name}.html`), "utf-8", function read(err, data) {
-        err ? res.json({"return": false}) : res.json({"return": true,"markdown": toMarkdown(data)});
+        if (err) {
+            fs.writeFile(path.join(__dirname, `/../data/${req.params.name}.html`));
+
+        } else {
+              res.json({"return": true,"markdown": toMarkdown(data)});
+          }
 })
 
 })

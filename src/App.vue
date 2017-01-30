@@ -14,8 +14,8 @@ export default {
         return {
 
             input: `
-            # Marked
-            This is pretty cool!
+# Marked
+This is pretty cool!
             `
         }
     },
@@ -32,7 +32,8 @@ watch: {
     input: function (newInput)  {
         this.$http.post(window.location.pathname, {
         "html": markdown.toHTML(newInput)}).then(function() {
-        },function() {
+        },function(err) {
+            console.log(err);
         });
     }
 },
