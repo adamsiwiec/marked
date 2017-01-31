@@ -24,6 +24,11 @@ This is pretty cool!
             this.$http.get(window.location.pathname + '/data').then((response) => {
                 this.input = response.body.markdown;
             }) })
+            this.$http.post(window.location.pathname, {
+            "html": this.input}).then(function() {
+            },function(err) {
+                console.log(err);
+            });
 
     },
 

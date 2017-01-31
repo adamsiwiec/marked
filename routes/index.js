@@ -20,6 +20,11 @@ router.get('/:name/edit', (req, res) => {
 
 router.get('/:name', (req, res) => {
   fs.readFile(path.join(__dirname, `/../data/${ req.params.name}.md`), (err, data) => {
+
+      if (err) {
+          res.redirect('/'+ req.params.name + '/edit');
+          res.end();
+      }
     let stringData = data + "";
 
       fs.writeFile(path.join(__dirname, `/../data/temp/${ req.params.name}.html`),
