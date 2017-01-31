@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack && nodemon ./bin/www ",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": " webpack && pm2 start production.config.js "
+    "start": "node production.config.js "
   },
   "dependencies": {
     "concurrently": "^3.1.0",
