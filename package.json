@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": " webpack && cross-env NODE_ENV=productionnode ./bin/www "
+    "start": " webpack && node ./bin/www "
   },
   "dependencies": {
     "concurrently": "^3.1.0",
