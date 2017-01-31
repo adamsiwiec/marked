@@ -31,7 +31,7 @@ This is pretty cool!
 watch: {
     input: function (newInput)  {
         this.$http.post(window.location.pathname, {
-        "html": markdown.toHTML(newInput)}).then(function() {
+        "html": newInput}).then(function() {
         },function(err) {
             console.log(err);
         });
