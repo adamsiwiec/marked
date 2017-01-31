@@ -5,14 +5,15 @@
   "author": "Adam Siwiec <brickmaster01@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "dev": "webpack && nodemon ./bin/www ",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": " webpack && node ./bin/www "
+    "start": " webpack && pm2 start production.config.js "
   },
   "dependencies": {
     "concurrently": "^3.1.0",
     "jade": "^1.11.0",
     "markdown": "^0.5.0",
+    "pm2": "^2.3.0",
     "to-markdown": "^3.0.3",
     "vue": "^2.1.10",
     "vue-resource": "^1.1.0"
