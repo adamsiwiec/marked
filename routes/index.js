@@ -1,10 +1,15 @@
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
-var toMarkdown = require('to-markdown');
 
 var router = express.Router();
 var markdown = require('markdown').markdown;
+
+
+
+router.get('/', (req, res) => {
+    res.redirect('/marked');
+})
 
 router.use((req, res, next) => {
    if(req.url.substr(-1) == '/' && req.url.length > 1)
@@ -12,6 +17,7 @@ router.use((req, res, next) => {
    else
        next();
 });
+
 
 /* GET home page. */
 router.get('/:name/edit', (req, res) => {
@@ -35,8 +41,7 @@ router.get('/:name', (req, res) => {
             <title>${ req.params.name }</title>
             <meta name="description" content="">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" type="text/css" href="/css/norm.css" />
-            <link rel="stylesheet" type="text/css" href="/css/markdown.min.css" />
+            <link rel="stylesheet" type="text/css" href="/css/styles.css" />
         </head>
         <body>
         ${ markdown.toHTML(stringData)}
