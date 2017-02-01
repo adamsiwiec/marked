@@ -16,7 +16,7 @@ export default {
             input: `
 # Marked
 This is pretty cool!
-            `
+`
         }
     },
     mounted: function () {
