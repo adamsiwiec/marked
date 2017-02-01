@@ -5,7 +5,7 @@
   "author": "Adam Siwiec <brickmaster01@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack && nodemon ./bin/www ",
+    "dev": "webpack  && nodemon ./bin/www ",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "node production.config.js "
   },

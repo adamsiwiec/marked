@@ -1,7 +1,11 @@
 <template>
 <div id="app">
-    <textarea v-model="input" :value="input" @input="update"></textarea>
-    <div v-html="compiledMarkdown"></div>
+    <div class="container-fluid" >
+    <div class="row">
+    <textarea class ="box col-6" v-model="input" :value="input" @input="update"></textarea>
+    <div class = "box output col-6" v-html="compiledMarkdown"></div>
+</div>
+</div>
 </div>
 </template>
 
@@ -58,24 +62,27 @@ watch: {
 }
 </script>
 
+
+<style src="./css/grid.css" />
+<style src="./css/styles.css" />
+
 <style>
 html,
 body,
 #app {
     margin: 0;
     height: 100%;
+    width: 100%;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #333;
 }
 
 textarea,
-#app div {
-    display: inline-block;
-    width: 49%;
-    height: 100%;
-    vertical-align: top;
-    box-sizing: border-box;
-    padding: 0 20px;
+.output {
+
+    height: 100vh;
+
+    padding-top: 20px;
 }
 
 textarea {
@@ -86,10 +93,20 @@ textarea {
     background-color: #f6f6f6;
     font-size: 14px;
     font-family: 'Monaco', courier, monospace;
-    padding: 20px;
+    padding: 20px 40px !important;
 }
 
 code {
     color: #f66;
 }
+
+#app {
+    width: 100vw;
+    height:100vh;
+}
+
+.row {
+    height: 100vh;
+}
+
 </style>
