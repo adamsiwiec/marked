@@ -4,8 +4,10 @@
     <div class="row">
     <textarea class ="box col-6" v-model="input" :value="input" @input="update"></textarea>
     <div class = "box output col-6" v-html="compiledMarkdown"></div>
+
 </div>
 </div>
+
 </div>
 </template>
 
@@ -109,4 +111,13 @@ code {
     height: 100vh;
 }
 
+.eye {
+
+    position: fixed;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
 </style>

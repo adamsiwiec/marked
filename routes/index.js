@@ -19,11 +19,12 @@ router.use((req, res, next) => {
 });
 
 
-/* GET home page. */
+// EDIT A PAGE
 router.get('/:name/edit', (req, res) => {
   res.sendFile(path.join(__dirname, '/../index.html'));
 });
 
+// VIEW A PAGE
 router.get('/:name', (req, res) => {
   fs.readFile(path.join(__dirname, `/../data/${ req.params.name}.md`), (err, data) => {
 
@@ -39,12 +40,13 @@ router.get('/:name', (req, res) => {
             <meta charset="utf-8">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
             <title>${ req.params.name }</title>
-            <meta name="description" content="">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         </head>
         <body>
         ${ markdown.toHTML(stringData)}
+        <a href="${ req.params.name }/edit"><i class="fa fa-pencil pencil" aria-hidden="true"></i></a>
         </body>
         </html>
     `, (err) => {

@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>marked</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
     <div id="app"></div>
+    <a id="link"><i class="fa fa-eye eye pencil" aria-hidden="true"></i></a>
     <script src="../build.js"></script>
+    <script>
+    var url = window.location.href + ""
+    var short = url.substring(0, url.length - 5);
+    document.getElementById("link").href = short;
+
+    </script>
   </body>
 </html>

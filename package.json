@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack  && nodemon ./bin/www ",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules",
     "start": "node production.config.js "
   },
   "dependencies": {
@@ -23,7 +23,7 @@
     "body-parser": "^1.16.0",
     "cookie-parser": "~1.4.3",
     "cross-env": "^3.0.0",
-    "css-loader": "^0.26.1",
+    "css-loader": "^0.27.3",
     "debug": "^2.6.0",
     "express": "^4.14.1",
     "file-loader": "^0.10.0",
