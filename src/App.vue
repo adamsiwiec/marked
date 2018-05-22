@@ -2,7 +2,7 @@
 <div id="app">
     <div class="container-fluid" >
     <div class="row">
-    <textarea class ="box col-6" v-model="input" :value="input" @input="update"></textarea>
+    <textarea class ="box col-6" v-model="input"  @input="update"></textarea>
     <div class = "box output col-6" v-html="compiledMarkdown"></div>
 
 </div>
@@ -69,9 +69,7 @@ watch: {
 <style src="./css/styles.css" />
 
 <style>
-html,
-body,
-#app {
+html, body, #app {
     margin: 0;
     height: 100%;
     width: 100%;
